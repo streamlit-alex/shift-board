@@ -44,7 +44,6 @@ with st.form(key='shift_board',clear_on_submit=True):
                                               'Available Days': [dow_filter], 'Shift Length': [length],
                                               'Available Hours': [hours]})])
         data.to_csv('data.csv')
-        emp_id
         st.snow()
 
 
