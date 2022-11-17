@@ -12,8 +12,8 @@ data = pd.read_csv('data.csv', encoding="iso8859_2")
 # dashboard title
 st.title("Peak Shift Board 🕰️ ")
 
-with st.form(key='shift_board'):
-    emp_id = st.text_input("Enter your ID")
+with st.form(key='shift_board',clear_on_submit=True):
+    emp_id = st.text_input("Enter your operator name")
 
     # top-level filters
     tod_filter = st.multiselect("Can you work days or nights?", ["Days", "Nights"])
@@ -44,4 +44,7 @@ with st.form(key='shift_board'):
                                               'Available Days': [dow_filter], 'Shift Length': [length],
                                               'Available Hours': [hours]})])
         data.to_csv('data.csv')
+        emp_id
+        st.snow()
+
 
